@@ -73,8 +73,27 @@ const updateEmployee = async (request, response) => {
     }
 }
 
+const deleteEmployee = async (request, response) => {
+    try {
+        const employee = await Employee.findById(request.params.id);
+
+        if (!employee) {
+            throw new Error("Employee Not Found!")
+        }
+
+        const myEmployee = await Employee.findByIdAndDelete(request.params.id);
+
+        return response.status(200).json(myEmployee)
+    } catch (error) {
+        console.log("Error : ", error);
+        return response.status(500).json({message: error.message});
+    }
+}
+
 module.exports = {
     createEmployee,
     getEmployees,
-    getEmployee
+    getEmployee,
+    updateEmployee,
+    deleteEmployee
 }

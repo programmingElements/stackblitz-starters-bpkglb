@@ -64,3 +64,11 @@ npm i express nodemon
   2. POST - store Data
   3. PUT - update Data
   4. DELETE - delete Data
+
+# Authentication
+
+  1. Statefull Authentication
+      * Sessions
+      * Cookies
+  2. Stateless Authentication
+      * JWT Tokens
