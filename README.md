@@ -60,7 +60,7 @@ npm i express nodemon
 
   REST API - Representational State Transfer
 
-  GET - get Data
-  POST - store Data
-  PUT - update Data
-  DELETE - delete Data
+  1. GET - get Data
+  2. POST - store Data
+  3. PUT - update Data
+  4. DELETE - delete Data
