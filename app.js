@@ -9,7 +9,9 @@ const app = express();
 
 const PORT = process.env.PORT || 6774;
 
-app.use('/employee', employeeRouter)
+app.use(bodyParser.json());
+
+app.use('/employees', employeeRouter);
 
 connectDB()
 .then(() => {
