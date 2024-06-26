@@ -36,3 +36,31 @@ nodemon
 express
 
 npm i express nodemon
+
+# Connect MongoDB with Node/Express JS
+
+  CRUD 
+
+  C - Create
+  R - Read
+  U - Update
+  D - Delete
+
+  mongodb & mongoose
+
+  npm i mongodb 
+
+  npm i mongoose
+
+# How to create API's in NodeJS
+
+  Application Programming Interface - API
+
+  It is a set of rules and protocols that allows different software applications to communicate with each other.
+
+  REST API - Representational State Transfer
+
+  GET - get Data
+  POST - store Data
+  PUT - update Data
+  DELETE - delete Data

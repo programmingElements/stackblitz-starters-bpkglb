@@ -1,8 +1,21 @@
+require('dotenv').config()
 const express = require('express');
+const {MongoClient} = require("mongodb");
 
 const app = express();
 
 const port = 5000;
+
+// console.log(process.env);
+
+// MongoDB Connected With NodeJS Using [mongodb] library
+
+MongoClient.connect(`${process.env.MONGODB_URI}`).then(() => {
+  console.log("MongoDB Connected Successfully!")
+})
+.catch((error) => {
+  console.log("MongoDB Connection Failed ", error)
+})
 
 // app.use((request, response, next) => {
 //   if (10 < 20) {
@@ -43,5 +56,5 @@ app.get('/user/:121', thirdHandler, (request, response) => {
 });
 
 app.listen(port, () => {
-  console.log('Server Start and Running Successfully!');
+  console.log(`Server Start and Running Successfully on ${port}`);
 });
