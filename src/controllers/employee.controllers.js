@@ -48,6 +48,31 @@ const getEmployee = async (request, response) => {
     }
 }
 
+const updateEmployee = async (request, response) => {
+    try {
+        const {name, email, phone, city} = request.body;
+
+        const employee = await Employee.findById(request.params.id);
+
+        if (!employee) {
+            throw new Error("Employee Not Found!")
+        }
+
+        const myEmployee = await Employee.findByIdAndUpdate(request.params.id, {
+            name,
+            email,
+            phone,
+            city
+        }, {new:true});
+
+        return response.status(200).json(myEmployee);
+        
+    } catch (error) {
+        console.log("Error : ", error);
+        return response.status(500).json({message: error.message});
+    }
+}
+
 module.exports = {
     createEmployee,
     getEmployees,
