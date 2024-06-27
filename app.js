@@ -51,7 +51,7 @@ const store = new MongoDBStore({
 app.use(session({
   secret: "This is a secret",
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: store
 }))
 
@@ -103,6 +103,15 @@ app.post('/user-login', async (request, response) => {
     console.log("Error : ", error);
     response.redirect('/login');
   }
+})
+
+app.post('/logout', (request, response) => {
+  request.session.destroy((err) => {
+    if (err) {
+      throw err;
+    }
+    response.redirect('/signup')
+  })
 })
 
 
