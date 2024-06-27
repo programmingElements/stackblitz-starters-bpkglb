@@ -45,6 +45,10 @@ const verifyUser = (request, response, next) => {
   }
 }
 
+app.get("/login", (request, response) => {
+  return response.render("login")
+})
+
 
 app.post("/api/login", (request, response) => {
   const {username, password} = request.body;
