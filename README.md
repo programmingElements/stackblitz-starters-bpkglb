@@ -78,3 +78,18 @@ npm i express nodemon
   * expression-session
   * connect-mongodb-session
 
+
+States -> User data, the information provided by the user, such as usernames, passwords, biometric data or tokens, which is used to verify their identity during the authentication process.
+
+
+Stateless Authentication App
+----------------------------
+JWT - JSON Web Tokens
+
+ * dependencies of Stateless Authentication App
+ 
+   npm i body-parser dotenv express mongoose
+
+   npm i -D nodemon
+
+
